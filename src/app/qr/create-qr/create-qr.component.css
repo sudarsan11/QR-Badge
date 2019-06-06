@@ -1,0 +1,21 @@
+
+
+i {
+  cursor: pointer;
+}
+
+.form-control {
+  -webkit-border-radius: 50px;
+  -moz-border-radius: 50px;
+  border-radius: 50px;
+
+}
+
+.child-margin {
+  margin-left: 15%;
+  color: white;
+}
+
+label {
+  color: #3E50BE;
+}

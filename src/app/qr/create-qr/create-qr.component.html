@@ -1,0 +1,96 @@
+
+
+<div class="col-12">
+  <div class="col-4" style=" margin-left: 35%;">
+
+
+    <div  style="background-color: #3535FF;">
+
+      <div style="background-color: #3535FF; padding: 10%;">
+
+
+          <i class="fa fa-bars" aria-hidden="true" style="color: white;"></i>
+          <span style="font-family: roboto; margin-left: 10px;color: white;">Qr badge</span>
+
+
+
+      </div>
+
+      <div style="padding: 20px;" class="card">
+
+
+        <div *ngIf="qrText.length > 0" style="padding-left: 50px;">
+          <qrcode [qrdata]="qrText" [size]="256" [level]="'M'"></qrcode>
+        </div>
+
+
+        <form *ngIf="qrText.length <= 0" #qrform="ngForm" (submit)="onQrFormSubmit(qrform)">
+
+          <div class="form-group">
+              <label >Name</label>
+              <input type="text" class="form-control" id="name" ngModel name="name">
+          </div>
+
+
+          <div class="form-group">
+              <label >Phone</label>
+              <input type="text" class="form-control" id="phone" ngModel name="phone">
+          </div>
+
+          <div class="form-group">
+              <label for="email">Email</label>
+              <input type="email" class="form-control" id="email" ngModel name="email">
+          </div>
+
+
+          <div class="form-group">
+              <label >Facebook</label>
+              <input type="text" class="form-control" id="name" ngModel name="facebook">
+          </div>
+
+
+          <div class="form-group">
+              <label >Twitter</label>
+              <input type="text" class="form-control" id="name" ngModel name="twitter">
+          </div>
+
+
+          <div class="form-group" *ngFor="let customfield of customFields let i = index">
+              <label contenteditable="true" class="custom-label">Sample</label>
+              <i style="float: right" class="fa fa-times" (click)="onRemoveCustomField()" aria-hidden="true"></i>
+              <input type="text" class="form-control" id="name" ngModel name={{i}}>
+          </div>
+
+          <span style="font-size: 25px;">
+              <i  (click)="onAddCustomField()"
+                class="offset-6 fa fa-plus-circle" aria-hidden="true"></i>
+          </span>
+
+
+          <br>
+          <button class="btn"
+          style="float: right;background-color: #3535FF; color: white;"  type="submit" >Submit</button>
+
+      </form>
+
+      </div>
+
+      <div class="row  child-margin" style="padding: 5%;">
+        <i class="col fa fa-share-square"></i>
+        <i class="col fa fa-address-card"></i>
+        <i class="col fa fa-eye"></i>
+      </div>
+
+
+    </div>
+
+
+
+
+  </div>
+</div>
+
+
+
+
+
