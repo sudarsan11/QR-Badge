@@ -19,7 +19,7 @@ app.use ((req,res,next) => {
 
 mongoose
   .connect(
-    "mongodb+srv://sudarsan:QSMBUikSJzhVw0Zp@cluster0-ohcdv.mongodb.net/Tasks?retryWrites=true&w=majority"
+    ""
     , { useNewUrlParser: true })
   .then(() => {
     console.log("Connected to database!");
